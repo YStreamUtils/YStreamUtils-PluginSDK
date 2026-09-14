@@ -4,11 +4,11 @@ using System.Text.Json.Serialization;
 namespace YStreamUtils.SDK.Plugin;
 
 [AttributeUsage(AttributeTargets.Assembly)]
-public abstract class PluginManifest : Attribute
+public class PluginManifest : Attribute
 {
-    [Required]
-    [JsonPropertyName("name")]
-    public required string Name { get; init; }
+    [JsonIgnore] public override object TypeId => base.TypeId;
+
+    [Required] [JsonPropertyName("name")] public required string Name { get; init; }
 
     [Required]
     [JsonPropertyName("version")]
@@ -31,18 +31,16 @@ public abstract class PluginManifest : Attribute
     public required DocumentationConfig Documentation { get; init; }
 }
 
-public abstract record SourceConfig
+public record SourceConfig
 {
     [Required]
     [JsonPropertyName("repository")]
     public required string Repository { get; init; }
 
-    [Required]
-    [JsonPropertyName("owner")]
-    public required string Owner { get; init; }
+    [Required] [JsonPropertyName("owner")] public required string Owner { get; init; }
 }
 
-public abstract class DocumentationConfig
+public class DocumentationConfig
 {
     [Required]
     [JsonPropertyName("description")]
