@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <RootNamespace>YStreamUtils_PluginSDK</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <Authors>Yes</Authors>
+        <Company>YSNT</Company>
+        <Description>SDK for YStreamUtils Plugins</Description>
+        <Copyright>Copyright © $([System.DateTime]::Now.ToString('yyyy')) YSNT</Copyright>
+        <PackageProjectUrl>https://github.com</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/YStreamUtils/YStreamUtils-PluginSDK</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>dotnet;csharp;library;utility;ystreamutils</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="Jint" Version="4.16.2" />
+    </ItemGroup>
+
+</Project>
