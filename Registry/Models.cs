@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using YStreamUtils_PluginSDK.Plugin;
+using YStreamUtils.SDK.Plugin;
 
-namespace YStreamUtils_PluginSDK.Registry;
+namespace YStreamUtils.SDK.Registry;
 
 public class RegistryDistribution
 {

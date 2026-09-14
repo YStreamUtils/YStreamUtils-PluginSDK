@@ -2,12 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
-        <RootNamespace>YStreamUtils_PluginSDK</RootNamespace>
+        <RootNamespace>YStreamUtils.SDK</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <PropertyGroup>
+        <PackageId>YStreamUtils.SDK</PackageId>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <Authors>Yes</Authors>
         <Company>YSNT</Company>

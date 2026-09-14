@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace YStreamUtils_PluginSDK.Plugin;
+namespace YStreamUtils.SDK.Plugin;
 
 [AttributeUsage(AttributeTargets.Assembly)]
 public abstract class PluginManifest : Attribute

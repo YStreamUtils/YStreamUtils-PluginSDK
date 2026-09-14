@@ -1,7 +1,7 @@
 ﻿using Jint;
 using Jint.Native;
 
-namespace YStreamUtils_PluginSDK.Plugin;
+namespace YStreamUtils.SDK.Plugin;
 
 public interface IPlugin
 {
