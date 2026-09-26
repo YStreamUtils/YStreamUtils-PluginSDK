@@ -1,4 +1,4 @@
-﻿name: Publish NuGet Package
+﻿name: Publish Packages
 
 on:
   push:
@@ -20,28 +20,14 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
-      - name: Extract Clean Version Number
-        id: get_version
-        run: |
-          VERSION=${GITHUB_REF_NAME#v}
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-
       - name: Restore Dependencies
         run: dotnet restore
 
       - name: Build Solution Assemblies
-        run: |
-          dotnet build -c Release \
-            /p:Version=${{ env.VERSION }} \
-            /p:RepositoryCommit=${{ github.sha }}
+        run: dotnet build -c Release
 
       - name: Pack Release Artifacts
-        run: |
-          dotnet pack -c Release \
-            --no-build \
-            --output ./artifacts \
-            /p:Version=${{ env.VERSION }} \
-            /p:RepositoryCommit=${{ github.sha }}
+        run: dotnet pack -c Release --no-build --output ./artifacts
 
       - name: Exchange OIDC Token for Temporary NuGet Key
         uses: NuGet/login@v1
@@ -50,8 +36,4 @@ jobs:
           user: ${{ secrets.NUGET_USER }}
 
       - name: Push Packages to NuGet
-        run: |
-          dotnet nuget push "./artifacts/*.nupkg" \
-            --api-key ${{ steps.login.outputs.NUGET_API_KEY }} \
-            --source https://api.nuget.org/v3/index.json \
-            --skip-duplicate
+        run: dotnet nuget push "./artifacts/*.nupkg" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
