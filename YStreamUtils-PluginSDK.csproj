@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
+        <Version>v1.0.0-alpha</Version>
         <PackageId>YStreamUtils.SDK</PackageId>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <Authors>Yes</Authors>
@@ -24,10 +25,6 @@
     
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath="\" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <PackageReference Include="Jint" Version="4.16.2" />
     </ItemGroup>
 
 </Project>

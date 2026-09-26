@@ -3,8 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace YStreamUtils.SDK.Plugin;
 
-[AttributeUsage(AttributeTargets.Assembly)]
-public abstract class PluginManifest : Attribute
+public record PluginManifest
 {
     [Required]
     [JsonPropertyName("name")]
@@ -31,7 +30,7 @@ public abstract class PluginManifest : Attribute
     public required DocumentationConfig Documentation { get; init; }
 }
 
-public abstract record SourceConfig
+public record SourceConfig
 {
     [Required]
     [JsonPropertyName("repository")]
@@ -42,7 +41,7 @@ public abstract record SourceConfig
     public required string Owner { get; init; }
 }
 
-public abstract class DocumentationConfig
+public record DocumentationConfig
 {
     [Required]
     [JsonPropertyName("description")]
