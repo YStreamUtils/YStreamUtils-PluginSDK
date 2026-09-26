@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>v1.0.0-alpha</Version>
+        <Version>1.0.0-alpha</Version>
         <PackageId>YStreamUtils.SDK</PackageId>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <Authors>Yes</Authors>
