@@ -8,7 +8,8 @@ public sealed class PluginManifestAttribute(
     string sourceOwner,
     string sourceRepository,
     string[] permissions,
-    string[] authors)
+    string[] authors,
+    Type? settingsType = null)
     : Attribute
 {
     public string Name { get; } = name;
@@ -19,7 +20,7 @@ public sealed class PluginManifestAttribute(
     public string[] Permissions { get; } = permissions;
     public string[] Authors { get; } = authors;
 
-    public Type? SettingsType { get; set; }
+    public Type? SettingsType { get; } = settingsType;
 
     public PluginManifest ToManifest() => new()
     {
