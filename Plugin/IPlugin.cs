@@ -16,7 +16,7 @@ public abstract class PluginBase<TSettings> : IPlugin, IAsyncDisposable
         PropertyNameCaseInsensitive = true
     };
 
-    private TSettings Settings { get; set; } = new();
+    protected TSettings Settings { get; private set; } = new();
 
     public virtual Task InitializeAsync() => Task.CompletedTask;
 
